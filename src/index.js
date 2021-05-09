@@ -1,13 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import axios from 'axios';
+import '@fortawesome/fontawesome-free/css/all.css';
+import './css/index.css';
+import './css/app.css';
+import './css/slick-them.css'
+import './css/slick.css'
+import 'aos/dist/aos.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { BrowserRouter as Router} from 'react-router-dom'
+
+axios.defaults.withCredentials = true;
+axios.defaults.baseURL = 'http://localhost/webService/';
+axios.defaults.headers.common['Authorization'] ='Bearer ' + localStorage.getItem("token");
+
 ReactDOM.render(
-  <React.StrictMode>
+  <Router>
     <App />
-  </React.StrictMode>,
+  </Router>,
   document.getElementById('root')
 );
 

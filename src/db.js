@@ -1,0 +1,8 @@
+class  Db {
+
+  constructor() {
+
+  }
+
+  getData ()
+}
